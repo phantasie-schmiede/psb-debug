@@ -1,0 +1,50 @@
+{
+	"authors": [
+		{
+			"email": "dn@phantasie-schmiede.de",
+			"name": "Daniel Ablass",
+			"role": "Developer"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"PSB\\PsbDebug\\": "Classes/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"PSB\\PsbDebug\\Tests\\": "Tests/"
+		}
+	},
+	"config": {
+		"bin-dir": ".Build/bin",
+		"sort-packages": true,
+		"vendor-dir": ".Build/vendor"
+	},
+	"description": "a collection of debugging tools",
+	"extra": {
+		"typo3/cms": {
+			"app-dir": ".Build",
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"extension-key": "psb_debug",
+			"web-dir": ".Build/public"
+		}
+	},
+	"keywords": [
+		"configuration",
+		"development",
+		"extension",
+		"typo3"
+	],
+	"license": "GPL-2.0-or-later",
+	"name": "psb/psb-debug",
+	"require": {
+		"php": "^7.4",
+		"typo3/cms-core": "^11.5"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-latest",
+		"typo3/testing-framework": "^6.8"
+	},
+	"type": "typo3-cms-extension"
+}
