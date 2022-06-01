@@ -19,5 +19,5 @@ $EM_CONF['psb_debug'] = [
     'description'      => 'a collection of debugging tools',
     'state'            => 'stable',
     'title'            => 'PSbits | Debug',
-    'version'          => '1.0.0',
+    'version'          => '0.1.0',
 ];
