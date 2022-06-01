@@ -31,7 +31,6 @@
 		}
 	},
 	"keywords": [
-		"configuration",
 		"development",
 		"extension",
 		"typo3"
@@ -48,6 +47,7 @@
 	},
 	"scripts": {
 		"prepare-release": [
+			"rm -rf .github",
 			"rm .editorconfig",
 			"rm .gitattributes",
 			"rm .gitignore"
