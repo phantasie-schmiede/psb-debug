@@ -43,7 +43,7 @@ class StopWatchViewHelper extends AbstractViewHelper
     /**
      * @return mixed
      */
-    public function render()
+    public function render(): mixed
     {
         $this->stopWatchService->setHeader($this->arguments['header']);
         $this->stopWatchService->setPrecision($this->arguments['precision']);
