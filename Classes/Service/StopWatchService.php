@@ -183,7 +183,8 @@ class StopWatchService
     /**
      * @param string $comment
      * @param bool   $noHtml
-     */
+     *
+     * @noinspection ForgottenDebugOutputInspection*/
     public function stop(string $comment = '', bool $noHtml = false): void
     {
         $this->addLogEntry(microtime(true), $comment);
