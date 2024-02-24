@@ -43,11 +43,18 @@ class QueryUtility
         array_walk($searchArray, static function (&$value) {
             $value = ':' . $value;
         });
+        $replaceArray = array_values($parameters);
+        array_walk($replaceArray, static function (&$value) {
+            if (is_string($value)) {
+                $value = '"' . $value . '"';
+            }
+        });
 
         $template = GeneralUtility::makeInstance(StandaloneView::class);
         $template->setTemplatePathAndFilename(GeneralUtility::getFileAbsFileName('EXT:psb_debug/Resources/Private/Templates/Message.html'));
         $template->assignMultiple([
-            'message' => str_replace($searchArray, array_values($parameters), $sql),
+            // Revert search order so that "value10" gets replaced before "value1"!
+            'message' => str_replace(array_reverse($searchArray), array_reverse($replaceArray), $sql),
             'title'   => $title ? : 'Query from ' . BackTraceUtility::getClass(2) . ':' . BackTraceUtility::getFunction(2),
         ]);
 
