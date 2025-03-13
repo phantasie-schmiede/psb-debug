@@ -19,7 +19,8 @@ namespace PSB\PsbDebug\Utility;
 /**
  * Class BackTraceUtility
  *
- * @package PSB\PsbDebug\Utility
+ * @deprecated since 1.0.0, will be removed in 2.0.0. Use new class \PSB\PsbDebug\Domain\Model\Backtrace instead.
+ * @package    PSB\PsbDebug\Utility
  */
 class BackTraceUtility
 {

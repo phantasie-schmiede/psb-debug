@@ -6,17 +6,15 @@ $EM_CONF[$_EXTKEY] = [
     'category'         => 'misc',
     'clearCacheOnLoad' => true,
     'constraints'      => [
-        'conflicts' => [
-        ],
+        'conflicts' => [],
         'depends'   => [
-            'php'   => '7.4-8.1',
-            'typo3' => '11.5.0-11.5.99',
+            'php'   => '7.4-8.4',
+            'typo3' => '11.5.0-13.4.99',
         ],
-        'suggests'  => [
-        ],
+        'suggests'  => [],
     ],
-    'description'      => 'a collection of debugging tools',
+    'description'      => 'Collection of debugging tools',
     'state'            => 'stable',
     'title'            => 'PSbits | Debug',
-    'version'          => '0.1.2',
+    'version'          => '1.0.0',
 ];
