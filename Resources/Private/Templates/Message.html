@@ -1,20 +1,21 @@
 <html data-namespace-typo3-fluid="true"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
-<style>
-    .alert {
-        border: 1px solid #B6EFFB;
-        border-radius: 0.375rem;
-        margin-bottom: 1rem;
-        padding: 1rem;
-        position: relative;
-    }
-
-    .alert-info {
-        background-color: #CFF4FC;
-        color: #04414D;
-    }
-</style>
 <f:if condition="{message}">
+    <style>
+        .alert {
+            border: 1px solid #B6EFFB;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .alert-info {
+            background-color: #CFF4FC;
+            color: #04414D;
+        }
+    </style>
+
     <div class="alert alert-info" role="alert">
         <f:if condition="{title}">
             <h5 class="alert-heading">{title}</h5>

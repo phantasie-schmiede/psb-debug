@@ -2,16 +2,10 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of PSB Debug.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
  */
 
 namespace PSB\PsbDebug\Utility;
@@ -19,7 +13,8 @@ namespace PSB\PsbDebug\Utility;
 /**
  * Class BackTraceUtility
  *
- * @package PSB\PsbDebug\Utility
+ * @deprecated since 1.0.0, will be removed in 2.0.0. Use new class \PSB\PsbDebug\Domain\Model\Backtrace instead.
+ * @package    PSB\PsbDebug\Utility
  */
 class BackTraceUtility
 {

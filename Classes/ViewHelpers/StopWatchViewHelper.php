@@ -2,21 +2,15 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of PSB Debug.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
  */
 
 namespace PSB\PsbDebug\ViewHelpers\Debug;
 
-use PSB\PsbDebug\Traits\PropertyInjection\StopWatchServiceTrait;
+use PSB\PsbDebug\Service\StopWatchService;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -26,7 +20,13 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class StopWatchViewHelper extends AbstractViewHelper
 {
-    use StopWatchServiceTrait;
+    protected StopWatchService $stopWatchService;
+
+    public function __construct(
+        StopWatchService $stopWatchService
+    ) {
+        $this->stopWatchService = $stopWatchService;
+    }
 
     /**
      * @var bool
@@ -40,9 +40,6 @@ class StopWatchViewHelper extends AbstractViewHelper
         $this->registerArgument('precision', 'integer', 'Number of decimals in output', false, 4);
     }
 
-    /**
-     * @return mixed
-     */
     public function render(): mixed
     {
         $this->stopWatchService->setHeader($this->arguments['header']);
