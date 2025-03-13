@@ -52,11 +52,13 @@ class QueryUtility
         $template->setTemplatePathAndFilename(
             GeneralUtility::getFileAbsFileName('EXT:psb_debug/Resources/Private/Templates/Message.html')
         );
-        $backtrace = new Backtrace();
         $template->assignMultiple([
             // Revert search order so that "value10" gets replaced before "value1"!
             'message' => str_replace(array_reverse($searchArray), array_reverse($replaceArray), $sql),
-            'title'   => $title ?: $backtrace->getFormattedOutput('Query from {class}::{function} in {file}:{line}', 2),
+            'title'   => $title ?: (new Backtrace())->getFormattedOutput(
+                'Query from {class}::{function} in {file}:{line}',
+                2
+            ),
         ]);
 
         echo $template->render();
